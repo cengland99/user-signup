@@ -25,34 +25,34 @@ def validate_user():
     email_error = ""
     
     if username == "":
-        username_error="Username must be populated"
+        username_error="Username cannot be blank"
 
     if len(username) < 3:
-        username_error = "User name must be longer than 3 and less than 20 characters" 
+        username_error = "Username must be between 3 and 20 characters" 
     
     if len(username) >20:
-        username_error = "User name must be longer than 3 and less than 20 characters"
+        username_error = "Username must be between 3 and 20 characters"
     
     if " " in username:
-        username_error = "Spaces are not allowed in the username" 
+        username_error = "Spaces not allowed in username" 
 
     if password == "":
-        password_error = "Password must be populated"
+        password_error = "Password cannot be blank"
     
     if " " in password:
-        password_error = "Spaces are not allowed in the password"
+        password_error = "Spaces not allowed in password"
     
     if len(password) < 3:
-        password_error = "User name must be longer than 3 and less than 20 characters" 
+        password_error = "Password must be between 3 and 20 characters" 
     
     if len(password) >20:
-        password_error = "User name must be longer than 3 and less than 20 characters"
+        password_error = "Password must be between 3 and 20 characters"
 
     if verify =="":
-        verify_error = "Please enter password verification"
+        verify_error = "Please enter password again"
      
     if " " in verify:
-        verify_error = "Spaces are not allowed in the password"    
+        verify_error = "Spaces not allowed in password"    
     
     if not password == verify:
         verify_error = "Passwords don't match"
@@ -60,21 +60,21 @@ def validate_user():
     if not email =="":    
  
         if " " in email:
-            email_error = "Spaces are not allowed in the email"       
+            email_error = "Spaces not allowed in email"       
 
 
         if len(email) <3:
-            email_error = "Email must be longer than 3 and less than 20 characters" 
+            email_error = "Email must be between 3 and 20 characters" 
 
         if len(email) >20:
-            email_error = "Email must be longer than 3 and less than 20 characters"    
+            email_error = "Email must be between 3 and 20 characters"    
 
         for char in email:
             if email.count ("@") < 1:
-                email_error = "The email must contain (1) @ and (1) . to be valid"
+                email_error = "The email must contain an @ and a . to be valid"
 
             elif email.count ("@") > 1:
-                email_error = "The email must contain (1) @ and (1) . to be valid"
+                email_error = "The email must contain an @ and a . to be valid"
             
             else:
                 email_error=" "
